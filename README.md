@@ -1,14 +1,48 @@
-# MelNevClassification
 
-# RU версия 
+# <p align="center" width="100%">MelNevClassification</p>
+### RU версия 
+## Описание
 MelNevClassification - проект, нацеленный на решение проблемы распознавания (классифицирования) раковых новообразований на теле, в частности, меланом и родинок с помощью анализа дермотологическихснимков сверточной нейронной сетью. Мы выделили именно эти 2 класса (меланома и родинка), чтобы посмотреть на динамику обучения нейронной сети.
 
 Дермотологические снимки для обучения и тестирования были взяты из официальных открытых источников.
 
+## Источники данных
+![HAM10000](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T)
+
+ISIC Challenge:
+
+![ISIC Challenge 2024](https://challenge2024.isic-archive.com/)
+
+![ISIC Challenge 2020](https://challenge.isic-archive.com/data/#2020)
+
+![ISIC Challenge 2019](https://challenge.isic-archive.com/data/#2019)
+
 ## Детали реализации
+### Обработка данных
 Из выбранных источников, описанных выше, были взяты только снимки меланом и родинок. Вышло следующее:
 ![classes](https://github.com/user-attachments/assets/2d46d462-b250-4c8f-9cac-00c14cdef819)
 
+Чтобы увеличить количество изображений меланом, мы попробовали убрать волосы на изображениях кожи, где они были, тем самым увеличили датасет на 800 фоток.
+
+Пример: 
+
+![hair_remove_example](https://github.com/user-attachments/assets/488fee69-4af9-44c5-9f59-c0df29ea6f8f)
+
+Затем появилась идея попробовать менять цвет кожи, создавая свои маски для некоторых снимков.
+
+Пример:
+
+![mask_example1](https://github.com/user-attachments/assets/aa791be4-1401-49c8-928b-151f6515d08a)
+![mask_example2](https://github.com/user-attachments/assets/f496463f-822b-4074-b438-e705033b1d2a)
+
+
+Для обучения классы изображений должны быть +- одинакого распределены, поэтому мы собрали датасет из следующего количества:
+
+![data_distrib](https://github.com/user-attachments/assets/221553c3-a0a5-4597-a0eb-0d8df138c6a7)
+
+
+### Обучение нейронной сети
+В файле *MelNev_train.ipynb* показано обучение модели model-72.keras
 
 
 ## EN version
