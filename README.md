@@ -6,6 +6,13 @@ MelNevClassification - проект, нацеленный на решение п
 
 Дермотологические снимки для обучения и тестирования были взяты из официальных открытых источников.
 
+## Протестируйте сами тут
+
+### Telegram Bot: https://t.me/MelNev_bot
+
+Или запуском программы для тестирования - запустить файл testModel.ipynb
+
+
 ## Источники данных
 ![HAM10000](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T)
 
@@ -60,15 +67,21 @@ ISIC Challenge:
 
 
 ## EN version
+## Description
+MelNevClassification is a project aimed at solving the problem of recognizing (classifying) cancerous neoplasms on the body, in particular melanomas and moles, using a convolutional neural network to analyze dermatological images. We identified these two classes (melanoma and mole) to look at the dynamics of neural network training.
 
-The purpose of work is to research different implementatons of **melanoma/nevus** recognition and classification on the picture.
-Moreover, in the end we should have trained model on our dataset.
+Dermatological images for training and testing were taken from official open sources.
 
-Dataset was created by open source skin cancer datasets:
+## Test it yourself here
 
+### Telegram Bot: https://t.me/MelNev_bot
+
+Or by running the testing program - run the testModel.ipynb file
+
+## Data sources
 ![HAM10000](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T)
 
-ISIC Challenge sourses:
+ISIC Challenge:
 
 ![ISIC Challenge 2024](https://challenge2024.isic-archive.com/)
 
@@ -76,54 +89,43 @@ ISIC Challenge sourses:
 
 ![ISIC Challenge 2019](https://challenge.isic-archive.com/data/#2019)
 
-## Data processing
-![data_distrib](https://github.com/user-attachments/assets/5cee4c3f-36e6-4f7c-b714-842d53754baa)
+## Implementation details
+### Data processing
+From the selected sources described above, only images of melanomas and moles were taken. The following came out:
+![classes](https://github.com/user-attachments/assets/2d46d462-b250-4c8f-9cac-00c14cdef819)
+
+To increase the number of melanoma images, we tried to remove hair from skin images where it was, thereby increasing the dataset by 800 photos.
+
+Example:
+
+![hair_remove_example](https://github.com/user-attachments/assets/488fee69-4af9-44c5-9f59-c0df29ea6f8f)
+
+Then an idea came up to try changing the skin color by creating our own masks for some images.
+
+Example:
+
+![mask_example1](https://github.com/user-attachments/assets/aa791be4-1401-49c8-928b-151f6515d08a)
+![mask_example2](https://github.com/user-attachments/assets/f496463f-822b-4074-b438-e705033b1d2a)
+
+For training, the image classes should be +- equally distributed, so we collected a dataset from the following amount:
+
+![data_distrib](https://github.com/user-attachments/assets/221553c3-a0a5-4597-a0eb-0d8df138c6a7)
 
 
+### Обучение нейронной сети
+В файле *MelNev_train.ipynb* показано обучение модели **model-72.keras**.
 
+Ее архитектура:
 
-## About model
+<img src="https://github.com/user-attachments/assets/84e0f75d-8206-4460-908f-0a121f396565" width="50%" />
 
-## Image classification model
+История обучения:
 
-model-72.keras in MelNev_train.ipynb has accuracy on test images ~ 0.72
+<img src="https://github.com/user-attachments/assets/4c6eb505-50f2-4696-a4ca-7864042b3fbe" width="50%" />
 
-**kerasSimple.h5** in folder _models/_
+Показания тестирования обученной нейронной сети:
 
-It consist of 3 layers of convolution
-![architecture](https://github.com/user-attachments/assets/0962f7e0-67e4-4fcb-99f0-eb2131bc134c)
+**72% точность**
 
+<img src="https://github.com/user-attachments/assets/d9a77322-eea4-411b-a74c-92a95ca04d52"/>
 
-### Statistic of training and validation for model:
-![Screenshot from 2024-02-13 19-28-26](https://github.com/LidaDavydova/MelanomaVenusClassification/assets/79317010/0aa3660f-adec-4b01-9412-bec9179bba24)
-
-The second model model_keras_2_1.keras in dataset.ipynb has accuracy on test images ~ 0.82
-
-**model_keras_2_1.keras** in folder _models/_
-
-It consist of 3 layers of convolution
-
-### Statistic of training and validation for model:
-![Screenshot from 2024-08-17 20-52-02](https://github.com/user-attachments/assets/c5c58433-b7a0-4287-b016-9061e2207aad)
-
-
-## Parameterized data from images classification models
-
-The model model_sklearn_1_0.pkl has accuracy on test images ~ 0.87
-
-It depends of quality of the **image classification model**
-
-**model_sklearn_1_0.pkl** in folder _models/_
-
-### Statistic of trained model:
-![Screenshot from 2024-08-17 21-20-51](https://github.com/user-attachments/assets/2d36204b-520d-4182-a896-232db1369804)
-
-## Try it
-
-In file testModel.ipynb you can check model on your images
-
-### Web site:
-http://89.169.135.79:5000/
-
-## Telegram Bot:
-https://t.me/AntiMelonomabot
