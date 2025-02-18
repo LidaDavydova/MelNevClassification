@@ -1,5 +1,15 @@
 # MelNevClassification
 
+## RU version
+MelNevClassification - проект, нацеленный на решение проблемы распознавания (классифицирования) раковых новообразований на теле, в частности, меланом и родинок. Мы выделили именно эти 2 категории,
+
+
+
+
+
+
+## EN version
+
 The purpose of work is to research different implementatons of **melanoma/nevus** recognition and classification on the picture.
 Moreover, in the end we should have trained model on our dataset.
 
@@ -16,6 +26,7 @@ ISIC Challenge sourses:
 ![ISIC Challenge 2019](https://challenge.isic-archive.com/data/#2019)
 
 ## Data processing
+![data_distrib](https://github.com/user-attachments/assets/5cee4c3f-36e6-4f7c-b714-842d53754baa)
 
 
 
