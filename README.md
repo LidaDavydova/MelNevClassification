@@ -1,9 +1,19 @@
-# MelanomaVenusClassification
+# MelNevClassification
 
 The purpose of work is to research different implementatons of **melanoma/nevus** recognition and classification on the picture.
 Moreover, in the end we should have trained model on our dataset.
 
-Dataset was created by compilation [https://doi.org/10.7910/DVN/DBW86T] and [https://challenge2020.isic-archive.com/] sourses.
+Dataset was created by open source skin cancer datasets:
+
+![HAM10000](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T)
+
+ISIC Challenge sourses:
+
+![ISIC Challenge 2024](https://challenge2024.isic-archive.com/)
+
+![ISIC Challenge 2020](https://challenge.isic-archive.com/data/#2020)
+
+![ISIC Challenge 2019](https://challenge.isic-archive.com/data/#2019)
 
 
 ## About models
