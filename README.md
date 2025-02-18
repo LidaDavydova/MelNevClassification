@@ -111,21 +111,24 @@ For training, the image classes should be +- equally distributed, so we collecte
 
 ![data_distrib](https://github.com/user-attachments/assets/221553c3-a0a5-4597-a0eb-0d8df138c6a7)
 
+## Implementation details
+### Data processing
+From the selected sources described above, only images of melanomas and moles were taken. The following came out:
+![classes](https://github.com/user-attachments/assets/2d46d462-b250-4c8f-9cac-00c14cdef819)
 
-### Обучение нейронной сети
-В файле *MelNev_train.ipynb* показано обучение модели **model-72.keras**.
+To increase the number of melanoma images, we tried to remove hair from skin images where it was, thereby increasing the dataset by 800 photos.
 
-Ее архитектура:
+Example:
 
-<img src="https://github.com/user-attachments/assets/84e0f75d-8206-4460-908f-0a121f396565" width="50%" />
+![hair_remove_example](https://github.com/user-attachments/assets/488fee69-4af9-44c5-9f59-c0df29ea6f8f)
 
-История обучения:
+Then an idea came up to try changing the skin color by creating our own masks for some images.
 
-<img src="https://github.com/user-attachments/assets/4c6eb505-50f2-4696-a4ca-7864042b3fbe" width="50%" />
+Example:
 
-Показания тестирования обученной нейронной сети:
+![mask_example1](https://github.com/user-attachments/assets/aa791be4-1401-49c8-928b-151f6515d08a)
+![mask_example2](https://github.com/user-attachments/assets/f496463f-822b-4074-b438-e705033b1d2a)
 
-**72% точность**
+For training, the image classes should be +- equally distributed, so we collected a dataset from the following amount:
 
-<img src="https://github.com/user-attachments/assets/d9a77322-eea4-411b-a74c-92a95ca04d52"/>
-
+![data_distrib](https://github.com/user-attachments/assets/221553c3-a0a5-4597-a0eb-0d8df138c6a7)
