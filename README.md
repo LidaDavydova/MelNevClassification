@@ -42,7 +42,21 @@ ISIC Challenge:
 
 
 ### Обучение нейронной сети
-В файле *MelNev_train.ipynb* показано обучение модели model-72.keras
+В файле *MelNev_train.ipynb* показано обучение модели **model-72.keras**.
+
+Ее архитектура:
+
+<img src="https://github.com/user-attachments/assets/84e0f75d-8206-4460-908f-0a121f396565" width="50%" />
+
+История обучения:
+
+<img src="https://github.com/user-attachments/assets/4c6eb505-50f2-4696-a4ca-7864042b3fbe" width="50%" />
+
+Показания тестирования обученной нейронной сети:
+
+**72% точность**
+
+<img src="https://github.com/user-attachments/assets/d9a77322-eea4-411b-a74c-92a95ca04d52"/>
 
 
 ## EN version
