@@ -15,18 +15,22 @@ ISIC Challenge sourses:
 
 ![ISIC Challenge 2019](https://challenge.isic-archive.com/data/#2019)
 
+## Data processing
 
-## About models
 
-Different neural network architectures are considered for the tasks of image classification and classification of parameterized data from these images
 
-## Image classification models
 
-The first model kerasSimple.h5 in dataset.ipynb has accuracy on test images ~ 0.75
+## About model
+
+## Image classification model
+
+model-72.keras in MelNev_train.ipynb has accuracy on test images ~ 0.72
 
 **kerasSimple.h5** in folder _models/_
 
 It consist of 3 layers of convolution
+![architecture](https://github.com/user-attachments/assets/0962f7e0-67e4-4fcb-99f0-eb2131bc134c)
+
 
 ### Statistic of training and validation for model:
 ![Screenshot from 2024-02-13 19-28-26](https://github.com/LidaDavydova/MelanomaVenusClassification/assets/79317010/0aa3660f-adec-4b01-9412-bec9179bba24)
